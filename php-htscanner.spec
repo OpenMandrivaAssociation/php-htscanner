@@ -5,13 +5,13 @@
 
 Summary:	Htaccess support for PHP
 Name:		php-%{modname}
-Version:	0.7.0
+Version:	0.8.1
 Release:	%mkrel 1
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/htscanner
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tar.bz2
-BuildRequires:	php-devel >= 3:5.2.0
+BuildRequires:	php-devel >= 3:5.2.1
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
@@ -64,5 +64,3 @@ EOF
 %doc CREDITS README package*.xml 
 %config(noreplace) %attr(0644,root,root) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
-
-
