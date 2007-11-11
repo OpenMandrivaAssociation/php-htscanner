@@ -6,7 +6,7 @@
 Summary:	Htaccess support for PHP
 Name:		php-%{modname}
 Version:	0.8.1
-Release:	%mkrel 5
+Release:	%mkrel 6
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/htscanner
@@ -56,6 +56,18 @@ default.ttl=300
 ; Stop when an error occured in RINIT (no document root, cannot get path_translated,...)
 stop_on_error = 0
 EOF
+
+%post
+if [ -f /var/lock/subsys/httpd ]; then
+    %{_initrddir}/httpd restart >/dev/null || :
+fi
+
+%postun
+if [ "$1" = "0" ]; then
+    if [ -f /var/lock/subsys/httpd ]; then
+	%{_initrddir}/httpd restart >/dev/null || :
+    fi
+fi
 
 %clean
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
