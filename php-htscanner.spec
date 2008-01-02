@@ -12,6 +12,7 @@ License:	PHP License
 URL:		http://pecl.php.net/package/htscanner
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tar.bz2
 BuildRequires:	php-devel >= 3:5.2.1
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Allow one to use htaccess-like file to configure PHP per directory, just like
