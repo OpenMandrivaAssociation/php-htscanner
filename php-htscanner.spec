@@ -6,13 +6,13 @@
 Summary:	Htaccess support for PHP
 Name:		php-%{modname}
 Version:	0.8.1
-Release:	%mkrel 7
+Release:	%mkrel 8
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/htscanner
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tar.bz2
 BuildRequires:	php-devel >= 3:5.2.1
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Allow one to use htaccess-like file to configure PHP per directory, just like
