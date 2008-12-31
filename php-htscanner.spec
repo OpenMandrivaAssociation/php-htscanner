@@ -6,7 +6,7 @@
 Summary:	Htaccess support for PHP
 Name:		php-%{modname}
 Version:	0.8.1
-Release:	%mkrel 10
+Release:	%mkrel 11
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/htscanner
