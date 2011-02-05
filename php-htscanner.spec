@@ -5,13 +5,12 @@
 
 Summary:	Htaccess support for PHP
 Name:		php-%{modname}
-Version:	0.9.1
-Release:	%mkrel 0.0.r305647.4
+Version:	1.0.0
+Release:	%mkrel 1
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/htscanner
-Source0:	http://pecl.php.net/get/%{modname}-0.9.x.tar.gz
-Patch0:		htscanner-0.9.0-format_not_a_string_literal_and_no_format_arguments.diff
+Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 BuildRequires:	php-devel >= 3:5.2.1
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
@@ -23,9 +22,8 @@ from: http://files.zoeloelip.be/htscanner
 
 %prep
 
-%setup -q -n %{modname}-0.9.x
-#[ "../package*.xml" != "/" ] && mv ../package*.xml .
-%patch0 -p0
+%setup -q -n %{modname}-%{version}
+[ "../package*.xml" != "/" ] && mv ../package*.xml .
 
 %build
 %serverbuild
@@ -76,6 +74,6 @@ fi
 
 %files 
 %defattr(-,root,root)
-%doc CREDITS README package*.xml 
+%doc CREDITS README package*.xml
 %config(noreplace) %attr(0644,root,root) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
